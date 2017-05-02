@@ -1,0 +1,56 @@
+// Design
+$width: 100%;
+$darkBlue: #072448;
+$gray: #e0e0e0;
+$navItemHeight: 80px;
+
+// Fonts
+$font-family: 'Fira Sans', sans-serif;
+$font-size: 17px;
+$font-weight: bold;
+$font-color: #666;
+
+nav {
+	width: $width;
+	font-family: $font-family;
+	font-size: $font-size;
+	position: fixed; 
+	bottom: 0;
+}
+nav a, nav a:visited, nav a:active {
+	text-decoration: none;
+}
+.navItem {
+	width: 20%;
+	float: left; 
+	color: $darkBlue;
+	height: $navItemHeight; 
+	text-align: center; 
+	position: relative; 
+	bottom: 0;
+	background: #fff;
+	padding: 10px 0;
+}
+.navItem img {
+	width: 40px; margin-top: 5px;
+	height: auto;
+}
+#efficacy, #safety, #mechanism, #dosing  {
+	width:calc(20% - 1px); 
+	border-left: 1px solid $gray;
+}
+.navItem.active {
+	background: $gray;
+	margin: -20px 0 0 0;
+	border-top: solid 20px $gray; 
+}
+.navTitle { 
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	right: 0;
+	font-weight: $font-weight;
+	height: $navItemHeight; 
+	line-height: $navItemHeight+30px; 
+	text-transform: capitalize;
+}

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import "compass/reset";
+@import "navigation";
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url("../fonts/FiraSans-Regular.ttf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Fira Sans Bold';
+  src: url("../fonts/FiraSans-Bold.ttf") format('opentype');
+}
+
+// Design
+$width: 100%;
+$height: 100%;
+$navigationHeight: 75px;
+$margin: 30px; 
+$lightBlue: #072448;
+$darkBlue: #072448;
+$gray: #666;
+$aquaOverlay: rgba(85, 207, 242, 0.75);
+$aquaOverlay: rgba(21, 47, 80, 0.85);
+$aquaOverlay: rgba(7, 36, 72, 0.85);
+
+// Fonts
+$font-family: 'Fira Sans', sans-serif;
+$font-color: #333;
+$font-size: 19px;
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-backface-visibility: hidden;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:$darkBlue;
+    font-family:$font-family;
+    font-size:$font-size; 
+	color: $font-color;
+	width: 100%; 
+	height: 100%; 
+	line-height: 1.6em;
+}
+
+.overlay {
+	position: fixed;
+	background: $darkBlue;
+	z-index: 999999;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+a, a:active, a:visited { text-decoration: none}
+.padding40 { padding-bottom: 40px }
+.bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+
+.bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+.app {
+    width:$width;
+    height:$height;
+	position: absolute;
+}
+
+.app a img {
+	border: 0;
+}
+.app img {
+	max-width: 100%;
+	height: auto;
+}
+h1 {
+    font-size:2.7em;
+    margin:0px;
+    margin:$margin;
+   color: #fff;
+	/*
+  text-shadow:
+   -1px -1px 0 $gray,  
+    1px -1px 0 $gray,
+    -1px 1px 0 $gray,
+     1px 1px 0 $gray;
+	*/
+	text-transform: uppercase;
+
+}
+h1 .strong {
+	font-family: 'Fira Sans Bold';
+}
+h2 {
+    font-size:1.5em;
+    font-weight:normal;
+    margin:0px;
+    margin:$margin;
+   color: white;
+}
+p { 
+	margin: $margin;
+}
+.textCentered {
+	text-align: center;
+}
+.placeholder {
+	background: url(../img/placeholder.png) no-repeat center center #f0f0f0; 
+	position: relative;
+}
+.spacer {
+	height: $navigationHeight+20;
+	width: 100%;
+	clear: both;
+}
+.clear { clear: both}
+.darkText {
+	color: $font-color;
+	text-shadow: none;
+}
+.whiteText {
+	color: #fff;
+	text-shadow: none;
+}
+.blueText {
+	color: $darkBlue;
+	text-shadow: none;
+}
+//home page
+.logo { 
+	margin: $margin auto;
+	width: 168px;
+}
+.banner { 
+	width: 614px;
+	margin: $margin auto; 
+}
+.button {
+	margin: $margin;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	background: $lightBlue;
+	color: #fff;
+	text-align: center;
+}
+.centered {
+	margin: $margin auto; }
+.noMargin { margin: 0}
+.standardMargin {margin:$margin}
+.doubleMargin {margin:$margin*2}
+.mainContent { 
+	margin: 1%; 
+}
+.mainContentItem { 
+	width: 31.33%; 
+	margin: 1%; 
+	height: 185px; 
+	background-position: top 10px center;
+	float: left;
+	position: relative;
+}
+#safetyScreen, #indicationScreen {
+	display: none;
+	width: 100%; height: 100%;
+	margin: auto;
+	background: linear-gradient(
+      rgba(255, 255, 255, 0.7), 
+      rgba(255, 255, 255, 0.7)
+    );
+	background-size: cover;
+	background-attachment:fixed;
+	position: absolute;
+    top: 150px;
+	padding-bottom: 200px;
+}
+#safetyInfo, #indication {
+	height: 270px;
+	position: relative;
+}
+#safetyInfo {
+	background: url(../img/home-prescriptions.jpg) no-repeat;
+	background-size: cover;
+}
+#indication {
+	background: url(../img/home-patients.jpg) no-repeat;
+	background-size: cover;
+}
+//grids
+.two { 
+	width: 48%; 
+	margin: 1%; 
+	height: 200px; 
+	float: left;
+	position: relative;
+}
+.gridItemTitle {
+	position: absolute; bottom: 0; width: 100%; text-align: center; background: $aquaOverlay; height: 70px; line-height: 70px; font-weight: bold;
+    font-size:1.15em; color: #f0f0f0;
+}
+//table
+td { background: rgba(255,255,255,.7); }
+th, td { padding: 15px;font-size: .9em; }
+th {background-color: $darkBlue; height: 40px; line-height: 40px}
+tr { border-bottom: white 2px solid;}
+.videoWrapper { 
+	width: 580px; height: 300px;
+	float: left;
+	margin: 0 $margin;
+}
